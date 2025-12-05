@@ -1,0 +1,109 @@
+/* 1. ESTILOS GENERALES DEL CUERPO */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fondo gris claro */
+    margin: 20px;
+    color: #333;
+}
+
+h2 {
+    color: #cc0000; /* Rojo principal para el encabezado */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* 2. ESTILOS DE LA CUADRÍCULA DE CATEGORÍAS (Contenedor principal) */
+/* Asume que tienes un <ul> o un <div> contenedor para las categorías */
+.category-grid {
+    display: grid;
+    /* 3 columnas en pantallas grandes, 2 en medianas, 1 en pequeñas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Espacio entre las tarjetas */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 3. ESTILOS DE CADA TARJETA DE CATEGORÍA */
+.category-card {
+    background-color: white;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    text-align: center;
+}
+
+.category-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. ESTILOS DEL ENLACE DENTRO DE LA TARJETA */
+.category-card a {
+    display: block;
+    padding: 40px 20px; /* Espacio interno grande */
+    text-decoration: none; /* Quitar el subrayado */
+    color: #333;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* 5. DISEÑO DE BOTÓN PARA "VER CARRITO" */
+.btn-carrito {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Azul */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}/*
+   ## ##     ##     ### ##   ### ###   ## ##   ### ###  ### ##     ##'
+  ##   ##     ##     ##  ##   ##  ##  ##   ##   ##  ##   ##  ##     ##'
+  ##        ## ##    ##  ##   ##      ##        ##       ##  ##   ## ##'
+  ##        ##  ##   ## ##    ## ##   ##        ## ##    ## ##    ##  ##'
+  ##        ## ###   ##  ##   ##      ##        ##       ## ##    ## ###'
+  ##   ##   ##  ##   ##  ##   ##  ##  ##   ##   ##  ##   ##  ##   ##  ##'
+   ## ##   ###  ##  ### ##   ### ###   ## ##   ### ###  #### ##  ###  ##'
+
+   */
+
+
+.btn-carrito:hover {
+    background-color: #0056b3;
+}/* 1. Contenedor principal de la cabecera */
+.cabecera-app {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    /* AUMENTAMOS EL PADDING VERTICAL Y HORIZONTAL */
+    padding: 15px 30px; 
+    background-color: #ffffff; 
+    /* Agregamos una sombra sutil para darle profundidad */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* 2. Estilos del texto de usuario (lado izquierdo) */
+.user-info {
+    font-weight: bold;
+    color: #cc0000;
+    /* AUMENTAMOS EL TAMAÑO DE LA FUENTE */
+    font-size: 1.1em; 
+}
+
+/* 3. Estilos de la navegación (lado derecho) */
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px; 
+    /* AUMENTAMOS EL TAMAÑO DE LA FUENTE */
+    font-size: 1.1em; 
+    transition: color 0.2s; /* Pequeño efecto al pasar el ratón */
+}
+
+/* 4. Estilo adicional al pasar el ratón */
+.main-nav a:hover {
+    color: #cc0000; 
+}
