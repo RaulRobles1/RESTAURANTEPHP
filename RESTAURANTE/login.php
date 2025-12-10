@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user) {
             $_SESSION['codRes'] = $user['CodRes']; 
             $_SESSION['username'] = $user['correo'];
-
+$_SESSION['correo_restaurante_notificacion'] = $user['correo'];
             $redirigir = $_GET['rediregido'] ?? 'Categorias.php';
             header("Location: " . $redirigir); 
             exit;

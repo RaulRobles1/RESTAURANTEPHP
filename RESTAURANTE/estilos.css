@@ -1,109 +1,379 @@
-/* 1. ESTILOS GENERALES DEL CUERPO */
+/* =========================================================
+   1. ESTILOS GENERALES Y TIPOGRAFÍA
+   ========================================================= */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Fondo gris claro */
-    margin: 20px;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa; /* Fondo muy claro */
+    margin: 0;
+    padding: 0;
+    color: #212529; /* Color de texto oscuro */
+    line-height: 1.6;
 }
 
 h2 {
-    color: #cc0000; /* Rojo principal para el encabezado */
+    color: #dc3545; /* Rojo oscuro (color principal) */
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 2em;
 }
 
-/* 2. ESTILOS DE LA CUADRÍCULA DE CATEGORÍAS (Contenedor principal) */
-/* Asume que tienes un <ul> o un <div> contenedor para las categorías */
-.category-grid {
-    display: grid;
-    /* 3 columnas en pantallas grandes, 2 en medianas, 1 en pequeñas */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; /* Espacio entre las tarjetas */
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* 3. ESTILOS DE CADA TARJETA DE CATEGORÍA */
-.category-card {
-    background-color: white;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.2s, box-shadow 0.2s;
-    overflow: hidden;
-    text-align: center;
-}
-
-.category-card:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* 4. ESTILOS DEL ENLACE DENTRO DE LA TARJETA */
-.category-card a {
-    display: block;
-    padding: 40px 20px; /* Espacio interno grande */
-    text-decoration: none; /* Quitar el subrayado */
-    color: #333;
-    font-size: 1.3em;
-    font-weight: bold;
-}
-
-/* 5. DISEÑO DE BOTÓN PARA "VER CARRITO" */
-.btn-carrito {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff; /* Azul */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    transition: background-color 0.3s;
-}/*
-   ## ##     ##     ### ##   ### ###   ## ##   ### ###  ### ##     ##'
-  ##   ##     ##     ##  ##   ##  ##  ##   ##   ##  ##   ##  ##     ##'
-  ##        ## ##    ##  ##   ##      ##        ##       ##  ##   ## ##'
-  ##        ##  ##   ## ##    ## ##   ##        ## ##    ## ##    ##  ##'
-  ##        ## ###   ##  ##   ##      ##        ##       ## ##    ## ###'
-  ##   ##   ##  ##   ##  ##   ##  ##  ##   ##   ##  ##   ##  ##   ##  ##'
-   ## ##   ###  ##  ### ##   ### ###   ## ##   ### ###  #### ##  ###  ##'
-
-   */
-
-
-.btn-carrito:hover {
-    background-color: #0056b3;
-}/* 1. Contenedor principal de la cabecera */
+/* =========================================================
+   2. ESTILOS DE LA CABECERA (cabecera.php)
+   ========================================================= */
 .cabecera-app {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    /* AUMENTAMOS EL PADDING VERTICAL Y HORIZONTAL */
-    padding: 15px 30px; 
+    padding: 20px 40px; 
     background-color: #ffffff; 
-    /* Agregamos una sombra sutil para darle profundidad */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    border-radius: 0 0 12px 12px; 
+    margin-bottom: 30px;
 }
 
-/* 2. Estilos del texto de usuario (lado izquierdo) */
+/* Info de usuario */
 .user-info {
-    font-weight: bold;
-    color: #cc0000;
-    /* AUMENTAMOS EL TAMAÑO DE LA FUENTE */
+    font-weight: 600;
+    color: #495057;
     font-size: 1.1em; 
+    padding: 5px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background-color: #f1f3f5;
 }
 
-/* 3. Estilos de la navegación (lado derecho) */
+/* Navegación */
+.main-nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
 .main-nav a {
     text-decoration: none;
-    color: #333;
-    margin-left: 15px; 
-    /* AUMENTAMOS EL TAMAÑO DE LA FUENTE */
+    color: #495057;
     font-size: 1.1em; 
-    transition: color 0.2s; /* Pequeño efecto al pasar el ratón */
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s; 
 }
 
-/* 4. Estilo adicional al pasar el ratón */
+/* Estilo para el botón de CERRAR SESIÓN */
+.btn-logout {
+    color: #dc3545 !important;
+    border: 2px solid #dc3545;
+    padding: 5px 15px !important;
+    border-radius: 6px;
+    font-weight: 600 !important;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #dc3545;
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-logout::after {
+    display: none; 
+}
+
+/* Efecto de subrayado al pasar el ratón (para links normales) */
 .main-nav a:hover {
-    color: #cc0000; 
+    color: #dc3545;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #dc3545;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   3. ESTILOS DE CUADRÍCULA Y TARJETAS (Categorías y Productos)
+   ========================================================= */
+.app-container {
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+/* CLASE DE CUADRÍCULA DE 3 COLUMNAS */
+.category-grid, .product-grid { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+    margin: 0 auto; 
+}
+
+/* Estilo de Tarjeta para Productos */
+.product-card {
+    background-color: white;
+    border-radius: 10px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%; 
+    padding: 25px;
+}
+
+.product-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo de Tarjeta para Categorías */
+.category-card {
+    background-color: white;
+    border-radius: 10px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.category-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-card a {
+    display: flex; 
+    flex-direction: column;
+    /* ESTOS DOS CENTRAN VERTICAL Y HORIZONTALMENTE EL CONTENIDO */
+    justify-content: center; 
+    align-items: center;    
+    /* PADDING MODERADO PARA EL TAMAÑO ESTÁNDAR DE LA TARJETA */
+    padding: 40px 20px; 
+    height: 100%;
+    text-decoration: none; 
+    color: #343a40;
+    font-weight: 700;
+    text-align: center; 
+}
+
+/* ESTILO PRINCIPAL DEL TEXTO: Grande, Rojo y Centrado */
+.category-name {
+    font-size: 2.5em; /* Tamaño grande para el nombre */
+    color: #dc3545; /* Color rojo dominante */
+    margin: 0; /* << CRUCIAL: ELIMINA MÁRGENES QUE PUEDEN DESCENTRAR >> */
+    font-weight: 800; /* Lo hace más audaz */
+    line-height: 1.2;
+}
+
+
+/* Información de Producto */
+.product-info h3 {
+    margin: 0 0 10px 0;
+    color: #dc3545;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+/* ... (resto de estilos de productos y carrito) */
+
+.product-info p {
+    margin: 5px 0;
+    color: #6c757d;
+    font-size: 0.95em;
+}
+
+/* Acciones (Unidades y Botón Añadir) */
+.product-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f3f5;
+}
+
+.product-actions form {
+    display: flex; 
+    gap: 10px; 
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.product-actions input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   4. ESTILOS DE BOTONES REUTILIZABLES
+   ========================================================= */
+.btn { 
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary { 
+    background-color: #dc3545; /* Rojo de acento */
+    color: white;
+    box-shadow: 0 4px 6px rgba(220, 53, 69, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #c82333;
+    box-shadow: 0 6px 8px rgba(220, 53, 69, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.btn-remove {
+    padding: 8px 15px;
+    background-color: #ffc107; /* Amarillo para la acción de eliminar/quitar */
+    color: #333;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn-remove:hover {
+    background-color: #e0a800;
+}
+
+
+/* Estilo específico para el área de resultado del pedido */
+.resultado-pedido {
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 550px;
+    margin: 80px auto;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+}
+
+.resultado-pedido h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.resultado-pedido p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #495057;
+}
+
+/* =========================================================
+   5. ESTILOS ESPECÍFICOS DEL CARRITO (Carrito.php)
+   ========================================================= */
+.cart-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    overflow: hidden; 
+}
+
+.cart-table thead th {
+    background-color: #343a40; 
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.cart-table tbody tr {
+    border-bottom: 1px solid #dee2e6;
+    transition: background-color 0.2s;
+}
+
+.cart-table tbody tr:hover {
+    background-color: #f8f9fa; 
+}
+
+.cart-table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+/* Esquinas redondeadas para la tabla */
+.cart-table thead tr th:first-child {
+    border-top-left-radius: 8px;
+}
+.cart-table thead tr th:last-child {
+    border-top-right-radius: 8px;
+}
+
+/* Estilos para el formulario de eliminación */
+.remove-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Estilo para la mensaje de carrito vacío */
+.cart-empty {
+    text-align: center;
+    padding: 50px;
+    border: 2px dashed #ced4da;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.cart-empty h2 {
+    color: #495057;
 }

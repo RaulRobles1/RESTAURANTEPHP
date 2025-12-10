@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// 1. Control de acceso
 if (!isset($_SESSION['username'])) {
     header("Location: FormularioRestaurante.php?error=acceso_restringido");
     exit;
